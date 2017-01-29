@@ -21,6 +21,7 @@ public class jogoDaVelha{
 		boolean jogadorX = true;
 		boolean jogadorY = false;
 		String vencedor = "null";
+		boolean empate = false;
 
 		// Instancia objeto que vai fazer uma checagem do sucesso
 		checaSucesso checagem = new checaSucesso();
@@ -47,10 +48,15 @@ public class jogoDaVelha{
 					System.out.println("Ops! Algo deu errado! Tente novamente!");
 					imprime.imprime(Campo);
 				}
-				if(checagem.sucesso(Campo) == true){
+				if(checagem.sucesso(Campo) == 1){
 					jogadorY = false;
 					jogo = false;
 					vencedor = "X";
+				}
+				if(checagem.sucesso(Campo) == 3){
+					jogadorY = false;
+					jogo = false;
+					empate = true;
 				}
 			}
 			imprime.imprime(Campo);
@@ -73,15 +79,25 @@ public class jogoDaVelha{
 					System.out.println("Ops! Algo deu errado! Tente novamente!");
 					imprime.imprime(Campo);
 				}
-				if(checagem.sucesso(Campo) == true){
+				if(checagem.sucesso(Campo) == 1){
 					jogadorX = false;
 					jogo = false;
 					vencedor = "Y";
 				}
+				if(checagem.sucesso(Campo) == 3){
+					jogadorX = false;
+					jogo = false;
+					empate = true;
+				}
 			}
 		}
-	System.out.println("");
-	imprime.imprime(Campo);
-	System.out.println("Parabéns, o jogador " + vencedor + " venceu o jogo!");
+		if(empate == false){
+			System.out.println("\n");
+			imprime.imprime(Campo);
+			System.out.println("Parabéns, o jogador " + vencedor + " venceu o jogo!");
+		}
+		else{
+			System.out.println("Empate!");
+		}
 	}
 }
