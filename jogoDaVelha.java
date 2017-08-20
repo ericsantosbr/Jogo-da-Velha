@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/*
+	Jogo com base em orientação a objetos
+	Há um objeto campo que já faz a entrada e validação de valores, sem precisar fazer uso de outros métodos externos
+*/
+
 public class jogoDaVelha{
 	public static void main(String [] args){
 		// Instancia objeto de entrada do usuário
@@ -10,6 +15,9 @@ public class jogoDaVelha{
 
 		// Instancia objeto que imprime o campo
 		imprimeCampo imprime = new imprimeCampo();
+		
+		// Instancia objeto que vai fazer uma checagem do sucesso
+		checaSucesso checagem = new checaSucesso();
 
 		// Variáveis necessárias para o funcionamento do jogo
 		/*
@@ -22,9 +30,6 @@ public class jogoDaVelha{
 		boolean jogadorY = false;
 		String vencedor = "null";
 		boolean empate = false;
-
-		// Instancia objeto que vai fazer uma checagem do sucesso
-		checaSucesso checagem = new checaSucesso();
 
 		// Laço while onde se passa o jogo
 		while(jogo){

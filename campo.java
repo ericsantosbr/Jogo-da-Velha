@@ -17,31 +17,29 @@ public class campo{
 			peca = "Y";
 		}
 
-		// Caso local no campo já tenha sido preenchido
-		if(matriz[x][y].equals("X") || matriz[x][y].equals("Y")){
-			System.out.println("Erro! Jogada inválida!");
-			return false;
-		}
-		else{
-			if(peca.equals("X") || peca.equals("Y")){
+
+		if ((y >= 0 && y < 3) && (x >= 0 && x < 3)){
+			// Caso local no campo já tenha sido preenchido
+			if(matriz[x][y].equals("X") || matriz[x][y].equals("Y")){
+				System.out.println("Erro! Jogada inválida!");
+				return false;
+			}
+			else{
 				matriz[x][y] = peca;
 				System.out.println("Perfeito");
 				return true;
 			}
-			else{
-				System.out.println("Peça inválida! Tente novamente!");
-				return false;
-			}
+		}
+		else{
+			System.out.println("Jogada inválida!\n");
+			return false;
 		}
 	}
 	String getMatriz(int i, int j){
 		String atual = matriz[i][j];
 		return atual;
 	}
-/*	public boolean checaFim(){
-		if(matriz[0][0].equals("X") || matriz[0]);
-	}
-*/
+
 	public String[][] getCampo(){
 		return matriz;
 	}
