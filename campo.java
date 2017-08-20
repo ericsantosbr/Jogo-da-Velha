@@ -17,7 +17,6 @@ public class campo{
 			peca = "Y";
 		}
 
-
 		if ((y >= 0 && y < 3) && (x >= 0 && x < 3)){
 			// Caso local no campo já tenha sido preenchido
 			if(matriz[x][y].equals("X") || matriz[x][y].equals("Y")){
